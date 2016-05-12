@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     }
     set_backgrount(i, j, k);
-  }, 50);
+  }, 100);
 });
 
 function set_backgrount(i, j , k) {
