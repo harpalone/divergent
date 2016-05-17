@@ -7,6 +7,9 @@ $(document).ready(function() {
     if (order == 'asc') {
       if (i > 254 || j > 254 || k > 254) {
         order = 'desc';
+        if (i < 1) { i = 1 } 
+        if (j < 1) { j = 1 }
+        if (k < 1) { k = 1 }
       }else{
         i += get_rand();
         j += get_rand();
@@ -16,6 +19,10 @@ $(document).ready(function() {
     else {
       if (i < 1 || j < 1 || k < 1) {
         order = 'asc';
+        if (i > 254) { i = 254 } 
+        if (j > 254) { j = 254 }
+        if (k > 254) { k = 254 }
+
       }else{
         i -= get_rand();
         j -= get_rand();
@@ -25,15 +32,15 @@ $(document).ready(function() {
 
     }
     set_backgrount(i, j, k);
-  }, 100);
+  }, 3000);
 });
 
 function set_backgrount(i, j , k) {
-  $('body').css('background-color', 'rgba('+i+','+j+','+k+','+'.5)');
+  $('body').css('background-color', 'rgba('+i+','+j+','+k+','+'.7)');
 }
 
 function get_rand() {
-  return rand(5)
+  return rand(200)
 }
 function rand(n) {
   return parseInt(Math.random()*n);
