@@ -2,4 +2,22 @@ extends ../layouts/main
 
 block content
   h1= title
-  p register new user
+
+  form(action='/users' method='post')
+    .form-group
+      lable Name
+      input.form-control(type='text' name='name')
+
+    .form-group
+      lable Email
+      input.form-control(type='email' name='email')
+
+    .form-group
+      lable Password
+      input.form-control(type='password' name='password')
+
+    .form-group
+      lable Password
+      input.form-control(type='password' name='confirm_password')
+
+     button.btn.btn-default(type='submit') Submit 
