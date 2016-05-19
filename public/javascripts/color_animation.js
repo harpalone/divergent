@@ -4,6 +4,10 @@ function start_color_animation() {
   }, 3000);
 }
 
+function stop_color_animation() {
+  clearInterval(color_animation);
+}
+
 function set_backgrount(i, j , k) {
   $('body').css('background-color', 'rgba('+i+','+j+','+k+','+'.7)');
 }
